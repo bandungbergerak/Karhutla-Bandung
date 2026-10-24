@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peta Sebaran Kebakaran Hutan dan Lahan di Bandung Raya Juli-Oktober 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<style id="leaflet-core">
+/* CSS inti Leaflet 1.9.4, disematkan langsung agar peta tetap tampil walau stylesheet CDN diblokir */
+.leaflet-pane,.leaflet-tile,.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-tile-container,.leaflet-pane>svg,.leaflet-pane>canvas,.leaflet-zoom-box,.leaflet-image-layer,.leaflet-layer{position:absolute;left:0;top:0}
+.leaflet-container{overflow:hidden}
+.leaflet-tile,.leaflet-marker-icon,.leaflet-marker-shadow{-webkit-user-select:none;user-select:none;-webkit-user-drag:none}
+.leaflet-tile::selection{background:transparent}
+.leaflet-marker-icon,.leaflet-marker-shadow{display:block}
+.leaflet-container .leaflet-overlay-pane svg{max-width:none!important;max-height:none!important}
+.leaflet-container .leaflet-marker-pane img,.leaflet-container .leaflet-shadow-pane img,.leaflet-container .leaflet-tile-pane img,.leaflet-container img.leaflet-image-layer,.leaflet-container .leaflet-tile{max-width:none!important;max-height:none!important;width:auto;padding:0}
+.leaflet-container img.leaflet-tile{mix-blend-mode:plus-lighter}
+.leaflet-container.leaflet-touch-zoom{touch-action:pan-x pan-y}
+.leaflet-container.leaflet-touch-drag{touch-action:pinch-zoom}
+.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom{touch-action:none}
+.leaflet-container{-webkit-tap-highlight-color:transparent}
+.leaflet-container a{-webkit-tap-highlight-color:rgba(51,181,229,.4)}
+.leaflet-tile{filter:inherit;visibility:hidden}
+.leaflet-tile-loaded{visibility:inherit}
+.leaflet-zoom-box{width:0;height:0;box-sizing:border-box;z-index:800}
+.leaflet-pane{z-index:400}
+.leaflet-tile-pane{z-index:200}
+.leaflet-overlay-pane{z-index:400}
+.leaflet-shadow-pane{z-index:500}
+.leaflet-marker-pane{z-index:600}
+.leaflet-tooltip-pane{z-index:650}
+.leaflet-popup-pane{z-index:700}
+.leaflet-map-pane canvas{z-index:100}
+.leaflet-map-pane svg{z-index:200}
+.leaflet-control{position:relative;z-index:800;pointer-events:visiblePainted;pointer-events:auto;float:left;clear:both}
+.leaflet-top,.leaflet-bottom{position:absolute;z-index:1000;pointer-events:none}
+.leaflet-top{top:0}.leaflet-right{right:0}.leaflet-bottom{bottom:0}.leaflet-left{left:0}
+.leaflet-right .leaflet-control{float:right}
+.leaflet-top .leaflet-control{margin-top:10px}
+.leaflet-bottom .leaflet-control{margin-bottom:10px}
+.leaflet-left .leaflet-control{margin-left:10px}
+.leaflet-right .leaflet-control{margin-right:10px}
+.leaflet-fade-anim .leaflet-popup{opacity:0;transition:opacity .2s linear}
+.leaflet-fade-anim .leaflet-map-pane .leaflet-popup{opacity:1}
+.leaflet-zoom-animated{transform-origin:0 0}
+svg.leaflet-zoom-animated{will-change:transform}
+.leaflet-zoom-anim .leaflet-zoom-animated{transition:transform .25s cubic-bezier(0,0,.25,1)}
+.leaflet-zoom-anim .leaflet-tile,.leaflet-pan-anim .leaflet-tile{transition:none}
+.leaflet-zoom-anim .leaflet-zoom-hide{visibility:hidden}
+.leaflet-interactive{cursor:pointer}
+.leaflet-grab{cursor:grab}
+.leaflet-crosshair,.leaflet-crosshair .leaflet-interactive{cursor:crosshair}
+.leaflet-popup-pane,.leaflet-control{cursor:auto}
+.leaflet-dragging .leaflet-grab,.leaflet-dragging .leaflet-grab .leaflet-interactive,.leaflet-dragging .leaflet-marker-draggable{cursor:grabbing}
+.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-image-layer,.leaflet-pane>svg path,.leaflet-tile-container{pointer-events:none}
+.leaflet-marker-icon.leaflet-interactive,.leaflet-image-layer.leaflet-interactive,.leaflet-pane>svg path.leaflet-interactive,svg.leaflet-image-layer.leaflet-interactive path{pointer-events:visiblePainted;pointer-events:auto}
+.leaflet-container{background:#ddd;outline-offset:1px}
+.leaflet-container a{color:#0078a8}
+.leaflet-zoom-box{border:2px dotted #38f;background:rgba(255,255,255,.5)}
+.leaflet-container{font-family:"Helvetica Neue",Arial,Helvetica,sans-serif;font-size:12px;line-height:1.5}
+.leaflet-bar{box-shadow:0 1px 5px rgba(0,0,0,.65);border-radius:4px}
+.leaflet-bar a{background-color:#fff;border-bottom:1px solid #ccc;width:26px;height:26px;line-height:26px;display:block;text-align:center;text-decoration:none;color:#000;background-position:50% 50%;background-repeat:no-repeat}
+.leaflet-bar a:hover,.leaflet-bar a:focus{background-color:#f4f4f4}
+.leaflet-bar a:first-child{border-top-left-radius:4px;border-top-right-radius:4px}
+.leaflet-bar a:last-child{border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-bottom:none}
+.leaflet-bar a.leaflet-disabled{cursor:default;background-color:#f4f4f4;color:#bbb}
+.leaflet-touch .leaflet-bar a{width:30px;height:30px;line-height:30px}
+.leaflet-touch .leaflet-bar a:first-child{border-top-left-radius:2px;border-top-right-radius:2px}
+.leaflet-touch .leaflet-bar a:last-child{border-bottom-left-radius:2px;border-bottom-right-radius:2px}
+.leaflet-control-zoom-in,.leaflet-control-zoom-out{font:bold 18px "Lucida Console",Monaco,monospace;text-indent:1px}
+.leaflet-touch .leaflet-control-zoom-in,.leaflet-touch .leaflet-control-zoom-out{font-size:22px}
+.leaflet-touch .leaflet-bar{box-shadow:none;border:2px solid rgba(0,0,0,.2);background-clip:padding-box}
+.leaflet-container .leaflet-control-attribution{background:rgba(255,255,255,.8);margin:0}
+.leaflet-control-attribution,.leaflet-control-scale-line{padding:0 5px;color:#333;line-height:1.4}
+.leaflet-control-attribution a{text-decoration:none}
+.leaflet-control-attribution a:hover,.leaflet-control-attribution a:focus{text-decoration:underline}
+.leaflet-attribution-flag{display:inline!important;vertical-align:baseline!important;width:1em;height:.6669em}
+.leaflet-popup{position:absolute;text-align:center;margin-bottom:20px}
+.leaflet-popup-content-wrapper{padding:1px;text-align:left;border-radius:12px}
+.leaflet-popup-content{margin:13px 24px 13px 20px;line-height:1.3;font-size:13px;min-height:1px}
+.leaflet-popup-content p{margin:1.3em 0}
+.leaflet-popup-tip-container{width:40px;height:20px;position:absolute;left:50%;margin-top:-1px;margin-left:-20px;overflow:hidden;pointer-events:none}
+.leaflet-popup-tip{width:17px;height:17px;padding:1px;margin:-10px auto 0;pointer-events:auto;transform:rotate(45deg)}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#fff;color:#333;box-shadow:0 3px 14px rgba(0,0,0,.4)}
+.leaflet-container a.leaflet-popup-close-button{position:absolute;top:0;right:0;border:none;text-align:center;width:24px;height:24px;font:16px/24px Tahoma,Verdana,sans-serif;color:#757575;text-decoration:none;background:transparent;z-index:2}
+.leaflet-container a.leaflet-popup-close-button:hover,.leaflet-container a.leaflet-popup-close-button:focus{color:#585858}
+.leaflet-popup-scrolled{overflow:auto}
+</style>
+<style>
+:root{
+  --bg:#fbfaf8; --panel:#ffffff; --ink:#1d2320; --muted:#5f6a64; --line:#e3e0da;
+  --hutan:#1b7f5c; --lahan:#e8590c; --focus:#1c5fd4;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font-family:"Public Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg);
+  display:grid;grid-template-columns:320px minmax(0,1fr);grid-template-rows:minmax(0,1fr);height:100vh;height:100dvh}
+aside{padding:20px;overflow:auto;border-right:1px solid var(--line);background:var(--panel)}
+h1{font-family:inherit;font-weight:700;font-size:1.45rem;line-height:1.15;margin:0 0 6px}
+.sub{color:var(--muted);font-size:.85rem;margin:0 0 18px}
+fieldset{border:0;padding:0;margin:0 0 18px}
+legend,label.t{font-weight:600;font-size:.82rem;margin-bottom:8px;display:block;padding:0}
+.chip{display:flex;align-items:center;gap:10px;padding:9px 10px;border:1px solid var(--line);
+  border-radius:8px;margin-bottom:6px;cursor:pointer;font-size:.9rem}
+.chip:has(input:checked){border-color:var(--c);background:color-mix(in srgb,var(--c) 9%,#fff)}
+.chip:has(input:focus-visible){outline:2px solid var(--focus);outline-offset:2px}
+.chip input{accent-color:var(--c);width:16px;height:16px}
+.chip i{width:12px;height:12px;border-radius:50%;background:var(--c)}
+.chip b{margin-left:auto;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
+select,button{font:inherit;font-size:.9rem;width:100%;padding:9px 10px;border:1px solid var(--line);
+  border-radius:8px;background:#fff;color:var(--ink)}
+button{cursor:pointer;margin-top:6px}
+select:focus-visible,button:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 18px}
+.stats div{border-top:3px solid var(--ink);padding-top:6px}
+.stats strong{display:block;font:700 1.7rem/1 "Source Serif 4",serif;font-variant-numeric:tabular-nums}
+.stats span{font-size:.78rem;color:var(--muted)}
+.size{display:flex;align-items:flex-end;gap:14px;font-size:.78rem;color:var(--muted)}
+.size span{display:flex;flex-direction:column;align-items:center;gap:4px}
+.size i{display:block;border-radius:50%;border:2px solid #8a948e;background:#8a948e33}
+.src{font-size:.75rem;color:var(--muted);margin-top:18px;line-height:1.4}
+#map{height:100%;width:100%;min-height:320px;min-width:0;background:#e9e7e2}
+.leaflet-popup-content-wrapper{border-radius:10px;padding:0}
+.leaflet-popup-content{margin:0;width:min(270px,70vw)!important;font-family:"Public Sans",sans-serif}
+.pop{padding:14px 16px 14px;border-top:5px solid var(--c);border-radius:10px 10px 0 0}
+.pop .k{font-size:.75rem;font-weight:700;color:var(--c)}
+.pop h3{font:700 1.05rem/1.25 "Source Serif 4",serif;margin:2px 0 4px}
+.pop .w{font-size:.8rem;color:var(--muted);margin-bottom:10px}
+.pop dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0;font-size:.85rem}
+.pop dt{color:var(--muted)} .pop dd{margin:0;font-weight:600}
+.pop .note{margin-top:10px;padding:8px 10px;background:#fff4e8;border-left:3px solid var(--lahan);
+  font-size:.82rem;line-height:1.4;border-radius:0 6px 6px 0}
+@media (max-width:760px){
+  body{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr)}
+  aside{border-right:0;border-bottom:1px solid var(--line);padding:12px 14px;max-height:42dvh}
+  h1{font-size:1.15rem} .sub,.size,.src{display:none}
+  .stats{margin-bottom:10px} .stats strong{font-size:1.3rem}
+  .cats{display:flex;gap:6px;flex-wrap:wrap} .chip{margin:0;padding:6px 8px}
+  fieldset{margin-bottom:10px}
+}
+</style>
+</head>
+<body>
+<aside>
+  <h1>Peta Sebaran Kebakaran Hutan dan Lahan di Bandung Raya Juli-Oktober 2026</h1>
+  <p class="sub">Peta ini memetakan 63 titik sebaran lokasi kebakaran hutan dan lahan di kawasan Bandung Raya periode Juli–Oktober 2026</p>
+  <div class="stats" aria-live="polite">
+    <div><strong id="n">0</strong><span>titik kejadian</span></div>
+    <div><strong id="ha">0</strong><span>hektare tercatat</span></div>
+  </div>
+  <fieldset class="cats"><legend>Jenis objek</legend><div id="cats" class="cats"></div></fieldset>
+  <fieldset><label class="t" for="kec">Kecamatan</label>
+    <select id="kec"><option value="">Semua kecamatan</option></select></fieldset>
+  <fieldset>
+    <button id="reset" type="button">Atur ulang filter</button></fieldset>
+  <div class="size" aria-hidden="true"><span><i style="width:14px;height:14px"></i>≤ 0,5 ha</span>
+    <span><i style="width:26px;height:26px"></i>5 ha</span><span><i style="width:42px;height:42px"></i>≥ 20 ha</span></div>
+  <p class="src">Sumber data: BPBD Jawa Barat dan Pemantauan di Media Sosial. Peta latar: Esri.</p>
+</aside>
+<div id="map" role="application" aria-label="Peta titik karhutla"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+if (typeof L === "undefined") {
+  document.getElementById("map").innerHTML = '<p style="padding:24px;font:600 .95rem system-ui;color:#5f6a64">Pustaka peta (Leaflet) gagal dimuat. Periksa koneksi internet lalu muat ulang halaman.</p>';
+  throw new Error("Leaflet gagal dimuat");
+}
+/* ===== DATA ===== */
+const ROWS = [
+["Buninagara, Kec. Kutawaringin","Kutawaringin","Buninagara","02/07/2026",-7.016234,107.500785,0.0,"Lahan",""],
+["Ciherang, Kec. Nagreg","Nagreg","Ciherang","11/07/2026",-7.010225,107.906454,3.0,"Lahan",""],
+["Sukajadi, Kec. Soreang","Soreang","Sukajadi","19/07/2026",-7.054185,107.500269,0.5,"Lahan",""],
+["Langonsari, Kec. Pameungpeuk","Pameungpeuk","Langonsari","24/07/2026",-7.018541,107.610641,1.0,"Lahan",""],
+["Jelegong, Kec. Kutawaringin","Kutawaringin","Jelegong","27/07/2026",-6.960975,107.522719,1.0,"Lahan",""],
+["Padaulun, Kec. Majalaya","Majalaya","Padaulun","06/08/2026",-6.988591,107.530999,1.0,"Lahan",""],
+["Cilame, Kec. Kutawaringin","Kutawaringin","Cilame","09/08/2026",-6.996019,107.520777,3.0,"Lahan",""],
+["Karamatmulya, Kec. Soreang","Soreang","Karamatmulya","11/08/2026",-7.037538,107.516360,0.0,"Lahan",""],
+["Bojongmanggu, Kec. Pameungpeuk","Pameungpeuk","Bojongmanggu","13/08/2026",-7.018232,107.580169,3.0,"Lahan",""],
+["Jatisari, Kec. Kutawaringin","Kutawaringin","Jatisari","17/08/2026",-6.9961,107.5147,4.0,"Lahan",""],
+["Bumiwangi, Kec. Ciparay","Ciparay","Bumiwangi","18/08/2026",-7.031924,107.694082,0.0,"Lahan",""],
+["Manggahang, Kec. Baleendah","Baleendah","Manggahang","22/08/2026",-7.023221,107.645317,0.3,"Lahan",""],
+["Sukamulya, Kec. Kutawaringin","Kutawaringin","Sukamulya","28/08/2026",-7.008133,107.483082,5.0,"Lahan",""],
+["Buninagara, Kec. Kutawaringin","Kutawaringin","Buninagara","30/08/2026",-7.024786,107.504043,0.0,"Lahan",""],
+["Jelegong, Kec. Kutawaringin","Kutawaringin","Jelegong","30/08/2026",-6.944176,107.584191,0.0,"Hutan",""],
+["Sadu, Kec. Soreang","Soreang","Sadu","30/08/2026",-7.030759,107.508398,3.0,"Hutan",""],
+["Sukamulya, Kec. Kutawaringin","Kutawaringin","Sukamulya","31/08/2026",-7.013592,107.498294,5.0,"Lahan",""],
+["Cikoneng, Kec. Pasirjambu","Pasirjambu","Cikoneng","01/09/2026",-7.075391,107.471868,1.0,"Lahan",""],
+["Cipanjalu, Kec. Cilengkrang","Cilengkrang","Cipanjalu","05/09/2026",-6.811390,107.726944,2.0,"Lahan",""],
+["Jelegong, Kec. Kutawaringin","Kutawaringin","Jelegong","05/09/2026",-6.956352,107.524087,0.0,"Lahan",""],
+["Kutawaringin, Kec. Kutawaringin","Kutawaringin","Kutawaringin","07/09/2026",-7.000190,107.491007,0.0,"Lahan",""],
+["Gunung Tangkuban Parahu, Jalur Sukawana-Cikahuripan","Lembang","Cikahuripan","17/10/2026",-6.759638,107.609781,1.0,"Hutan",""],
+["Kp. Tugulaksana RW 11, Kabupaten Bandung","Lembang","Pagerwangi","18/09/2026",-6.841708,107.618665,null,"Hutan",""],
+["Gunung Gajahlangu, Cireundeu","Cimahi Selatan","Cireundeu","29/08/2026",-6.914232,107.527233,null,"Hutan",""],
+["Kampung Cikamuning, Kabupaten Bandung Barat","Padalarang","Ciburuy","16/09/2026",-6.818354,107.468566,null,"Lahan",""],
+["Jalan Rereogan Sarupi, Kota Bandung","Cidadap","Ciumbuleuit","14/09/2026",-6.856563,107.609979,2.2,"Lahan","Kobaran api berhasil dipadamkan dalam kurun waktu 15 jam. Belasan orang terkena ISPA."],
+["Area Kebun Desa Talun, Kabupaten Bandung","","Talun","13/09/2026",-7.066880,107.762339,null,"Lahan",""],
+["Jalan Sadang Buntu, Kota Bandung","Babakan Ciparay","Margasuka","08/09/2026",-6.952701,107.569077,null,"Lahan",""],
+["Cijanten, Kabupaten Bandung Barat","Cililin","Batulayang","06/09/2026",-6.978748,107.447102,null,"Hutan",""],
+["Tol Purbaleunyi KM 124","Padalarang","Laksanamekar","06/09/2026",-6.876024,107.513998,null,"Lahan",""],
+["Karya Bakti, Kota Cimahi","Cimahi Utara","Cipageran","06/09/2026",-6.840887,107.543944,null,"Lahan",""],
+["Gunung Nini, Kabupaten Bandung","Ciparay","Bumiwangi","05/09/2026",-7.046337,107.686564,null,"Hutan",""],
+["Gunung Lalakon, Kabupaten Bandung","Cihampelas","Badaraksa","05/09/2026",-6.957121,107.523444,null,"Hutan",""],
+["Jalan Citra Green Hill Dago, Kota Bandung","Cidadap","Ciumbuleuit","28/08/2026",-6.857219,107.616062,null,"Lahan","Kebakaran dikaitkan dengan aktivitas pembakaran sampah"],
+["Kawasan Cihanja, Kota Bandung","Cidadap","Ciumbuleuit","04/09/2026",-6.8585,107.6151,2.2,"Lahan",""],
+["Gunung Pancir, Kabupaten Bandung","Margaasih","Nanjung","30/08/2026",-6.949981,107.535751,null,"Hutan",""],
+["Gunung Mandalahaji, Kabupaten Bandung","Pacet","Mandalahaji","05/09/2026",-7.114605,107.718560,null,"Hutan",""],
+["Bukitunggul, Kabupaten Bandung","Cilengkrang","Cipanjalu","05/09/2026",-6.809599,107.735613,null,"Hutan",""],
+["Gunung Paseban, Kabupaten Bandung","Kutawaringin","Jelegong","27/07/2026",-6.964533,107.531378,null,"Hutan",""],
+["Jalan Solokan Jeruk-Sapan, Kabupaten Bandung","Solokanjeruk","","10/10/2026",-7.009291,107.727792,null,"Lahan",""],
+["Gunung Anjing, Kabupaten Bandung","Pameungpeuk","Bojongmanggu","17/10/2026",-7.023926,107.607450,null,"Hutan",""],
+["Gunung Batu, Kabupaten Bandung","Soreang","Sadu","16/07/2026",-7.037840,107.498193,null,"Hutan",""],
+["Jalan Bukit Raya Atas, Kota Bandung","Cidadap","Ciumbuleuit","16/09/2026",-6.858141,107.608955,null,"Lahan",""],
+["Gunung Cipicung, Kabupaten Bandung","Baleendah","Baleendah","25/09/2026",-7.0016,107.6433,null,"Hutan",""],
+["Perbatasan Kiara Payung dan Bantar Gedang","Padalarang","","14/10/2026",-6.8407,107.4984,null,"Lahan",""],
+["Gunung Aseupan, Kabupaten Bandung","Soreang","Karamatmulya","22/09/2026",-7.038522,107.506712,null,"Lahan",""],
+["Gunung Singa, Kabupaten Bandung","Kutawaringin","Buninagara","02/07/2026",-7.018183,107.499997,null,"Hutan",""],
+["Perkebunan Teh Sankanwangi, Kabupaten Bandung","Pasirjambu","Sugihmukti","23/09/2026",-7.221907,107.453156,null,"Lahan",""],
+["Kawasan Wisata Bale Bambu, Kampung Patrol","Soreang","Sukajadi","19/10/2026",-7.049163,107.498856,null,"Lahan",""],
+["Gunung Leutik, Nagreg","","","12/10/2026",-7.021787,107.891063,null,"Lahan",""],
+["Kawasan Hutan Cibuni, Kabupaten Bandung","Rancabali","Cibuni","13/09/2026",-7.172246,107.377009,null,"Hutan",""],
+["Tugu Legok Kole, Kabupaten Bandung","Soreang","Karamat","05/10/2026",-7.044621,107.511263,null,"Lahan",""],
+["Gunung Cigayung, Kabupaten Bandung Barat","Cililin","Batulayang","06/09/2026",-6.9644,107.4478,null,"Hutan",""],
+["Hutan Bambu Cileles","","","28/09/2026",-6.9111,107.7722,null,"Lahan",""],
+["Babakan Sindangsari, Kabupaten Bandung","Paseh","Sukamantri","13/09/2026",-7.0547,107.7700,null,"Lahan",""],
+["Gunung Bojong, Kabupaten Bandung Barat","Cihampelas","Cipatik","16/08/2026",-6.945281,107.515256,null,"Hutan",""],
+["Kampung Cigondok, Kabupaten Bandung","Pangalengan","Margamulya","06/09/2026",-7.15956,107.59032,null,"Lahan","Kebakaran lahan di area pembuangan sampah"],
+["Legok Kuda, Kabupaten Bandung","Soreang","Sukanagara","20/09/2026",-7.045990,107.521441,null,"Lahan",""],
+["Bojong Laja, Kabupaten Bandung","Kutawaringin","Kutawaringin","07/09/2026",-6.996614,107.511806,null,"Lahan",""],
+["Bukit Lalakon, Kabupaten Bandung","Kutawaringin","Jelegong","05/09/2026",-6.958477,107.520575,null,"Lahan",""],
+["Bukit Paseban, Kabupaten Bandung","Kutawaringin","Jelegong","27/07/2026",-6.964693,107.529107,null,"Lahan",""],
+["Summarecon, Kota Bandung","Gedebage","","21/10/2026",-6.953503,107.701187,null,"Lahan",""],
+["Ciwaruga, Kabupaten Bandung Barat","Parongpong","","21/10/2026",-6.865276,107.574720,null,"Hutan","Kebakaran melanda vegetasi kering di area terbuka dan tebing perbukitan dekat perbatasan desa Ciwaruga dan Sariwangi"]
+];
+const DATA = ROWS.map(r => ({nama:r[0],kec:r[1],kecF:r[1]||"Tidak tercatat",desa:r[2],tgl:r[3],lat:r[4],lng:r[5],ha:r[6],jenis:r[7],ket:r[8]}));
+const COLORS = {Hutan:"#1b7f5c", Lahan:"#e8590c"};
+const FALLBACK = "#5f6a64";
+const color = j => COLORS[j] || FALLBACK;
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const BULAN = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+const tglID = s => { const [d,m,y] = s.split("/").map(Number); return `${d} ${BULAN[m-1]} ${y}`; };
+const fmtHa = n => n.toLocaleString("id-ID",{maximumFractionDigits:1,minimumFractionDigits:n%1?1:0});
+// Jari-jari (px): akar kuadrat agar LUAS lingkaran sebanding dengan luas terdampak
+const radius = ha => Math.max(6, Math.min(30, 6 + Math.sqrt(ha||0) * 5.5));
+
+/* ===== Peta & basemap ===== */
+const map = L.map("map",{zoomControl:true}).setView([-6.9,107.6],10);
+const ESRI = "Tiles © Esri — Esri, HERE, Garmin, OpenStreetMap contributors";
+L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",{maxZoom:19,attribution:ESRI}).addTo(map);
+
+/* ===== Marker ===== */
+const layer = L.layerGroup().addTo(map);
+const markers = DATA.map(d => {
+  const c = color(d.jenis);
+  const m = L.circleMarker([d.lat,d.lng],{radius:radius(d.ha),color:"#fff",weight:1.5,fillColor:c,fillOpacity:.72});
+  m.bindPopup(`<div class="pop" style="--c:${c}">
+    <div class="k">${esc(d.jenis)}</div>
+    <h3>${esc(d.nama)}</h3>
+    <div class="w">${[d.kec&&"Kec. "+d.kec, d.desa&&"Desa "+d.desa].filter(Boolean).map(esc).join(", ")}</div>
+    <dl><dt>Tanggal</dt><dd>${tglID(d.tgl)}</dd><dt>Luas terdampak</dt><dd>${d.ha==null?"Belum tercatat":fmtHa(d.ha)+" hektare"}</dd></dl>
+    ${d.ket ? `<div class="note">${esc(d.ket)}</div>` : ""}</div>`,{maxWidth:300});
+  m.on("mouseover",()=>m.setStyle({weight:3})).on("mouseout",()=>m.setStyle({weight:1.5}));
+  return {d,m};
+});
+
+/* ===== Filter ===== */
+const jenisList = [...new Set(DATA.map(d=>d.jenis))];
+const catsEl = document.getElementById("cats");
+jenisList.forEach(j => {
+  const n = DATA.filter(d=>d.jenis===j).length;
+  catsEl.insertAdjacentHTML("beforeend",
+   `<label class="chip" style="--c:${color(j)}"><input type="checkbox" value="${esc(j)}" checked><i></i>${esc(j)}<b>${n}</b></label>`);
+});
+const kecEl = document.getElementById("kec");
+[...new Set(DATA.map(d=>d.kecF))].sort((a,b)=>a.localeCompare(b,"id"))
+  .forEach(k => kecEl.insertAdjacentHTML("beforeend",`<option value="${esc(k)}">${esc(k)}</option>`));
+
+function render(fit=true){
+  const on = new Set([...catsEl.querySelectorAll("input:checked")].map(i=>i.value));
+  const kec = kecEl.value;
+  layer.clearLayers();
+  const shown = markers.filter(({d}) => on.has(d.jenis) && (!kec || d.kecF===kec))
+                       .sort((a,b)=>b.d.ha-a.d.ha); // besar digambar dulu, kecil di atas
+  shown.forEach(({m}) => layer.addLayer(m));
+  document.getElementById("n").textContent = shown.length;
+  document.getElementById("ha").textContent = fmtHa(shown.reduce((s,{d})=>s+(d.ha||0),0));
+  if (fit && shown.length) map.fitBounds(L.latLngBounds(shown.map(({d})=>[d.lat,d.lng])),{padding:[50,50],maxZoom:13});
+}
+catsEl.addEventListener("change",()=>render());
+kecEl.addEventListener("change",()=>render());
+document.getElementById("reset").addEventListener("click",()=>{
+  catsEl.querySelectorAll("input").forEach(i=>i.checked=true); kecEl.value=""; render();
+});
+render();
+</script>
+</body>
+</html>
